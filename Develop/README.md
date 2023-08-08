@@ -1,26 +1,39 @@
-# Among us
+# Nope
 
 ## Description
 
-among us
+make me
 
 ## Installation
 
-among us
+n/A
 
 ## Usage
 
-among us
+install, download. done.
 
-  ![among us](./readmefiles/amongus.txt/)
+  ![amongu s](./readmefiles/jumsoi.gif/)
     
-  ![jumsoi](./readmefiles/jumsoi.gif/)
+## Features
+
+
+  amazing
+    
+  does htings well
+    
+  responsive
+    
+  functional
     
   ## Credits
 
-  jumsoi, https://www.github.com/jujusoi/
+  me
 
   ## License
 
-  MIT
+  M.I.T
+
+  ## Links
+
+  https://www.yourmother.com
   

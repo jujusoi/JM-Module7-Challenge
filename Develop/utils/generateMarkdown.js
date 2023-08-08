@@ -31,21 +31,37 @@ function generateUsageFiles(data) {
   let result = '';
   for (let obj of data) {
     result += `
-  ![${obj.QuestionUsagePathName}](${obj.QuestionUsagePath})
+![${obj.QuestionUsagePathName}](${obj.QuestionUsagePath})
     `
   }
   return result;
 }
 
+function generateFeatures(data) {
+  let result = '';
+  for (let obj of data) {
+    result += `
+  ${obj.QuestionFeatures}
+    `
+  }
+  return `
+## Features
+${result}`;
+}
+
 function generateCrednLic(data) {
   return `
-  ## Credits
+## Credits
 
-  ${data.QuestionCredits}
+${data.QuestionCredits}
 
-  ## License
+## License
 
-  ${data.QuestionLicense}
+${data.QuestionLicense}
+
+## Links
+
+${data.QuestionLinks}
   `
 }
 
@@ -53,4 +69,5 @@ module.exports = {
   generateMarkdown,
   generateUsageFiles,
   generateCrednLic,
+  generateFeatures,
 };

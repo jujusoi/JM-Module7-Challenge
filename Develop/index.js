@@ -4,9 +4,10 @@ const inquirer = require('inquirer');
 const genMd = require('./utils/generateMarkdown');
 const { error } = require('console');
 let usageArray = [];
+let featureArray = [];
 // TODO: Create an array of questions for user input
-const questions = ["Enter your project title", "Provide a description of your project", "Enter installation instructions", "Provide instructions and examples for use", "Any screenshots/videos to accompany use instructions?", "Alt description for file:", "Provide a path to your file", "Any additional files?", "Input Credits: i.e. contributors, third-party-assets, tutorials", "Input license type:"];
-const [qTitle, qDesc, qInstall, qUsage, qUsageCon, qUsagePathName, qUsagePath, qUsagePathCon, qCredits, qLicense] = questions;
+const questions = ["Enter your project title", "Provide a description of your project", "Enter installation instructions", "Provide instructions and examples for use", "Any screenshots/videos to accompany use instructions?", "Alt description for file:", "Provide a path to your file", "Any additional files?", "Input Credits: i.e. contributors, third-party-assets, tutorials", "Input license type:", "What are some of your Project's features?", "External links:", "Input another line?"];
+const [qTitle, qDesc, qInstall, qUsage, qUsageCon, qUsagePathName, qUsagePath, qUsagePathCon, qCredits, qLicense, qFeatures, qLinks, qFeaturesCon] = questions;
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => err ? console.error(err) : console.log("README written!"))
@@ -45,21 +46,39 @@ function initUsageStuff(firstResponse) {
             usageArray = usageArray.concat(response);
             console.log(usageArray);
             console.log(firstResponse);
-            initCredLicense(firstResponse, usageArray);
+            initFeatureStuff(firstResponse, usageArray);
         }
     })
 }
 
-function initCredLicense(firstResponse, secondResponse) {
+function initFeatureStuff(first, second) {
+    inquirer.prompt([
+        {type: 'input', message: qFeatures, name: 'QuestionFeatures'},
+        {type: 'confirm', message: qFeaturesCon, name: 'QuestionFeaturesCon'},
+    ])
+    .then((response) => {
+        if (response.QuestionFeaturesCon === true) {
+            featureArray = featureArray.concat(response);
+            initFeatureStuff(first, second);
+        } else {
+            featureArray = featureArray.concat(response);
+            initCredLicense(first, second, featureArray);
+        }
+    })
+}
+
+function initCredLicense(firstResponse, secondResponse, thirdResponse) {
     inquirer.prompt([
         {type: 'input', message: qCredits, name: 'QuestionCredits'},
         {type: 'input', message: qLicense, name: 'QuestionLicense'},
+        {type: 'input', message: qLinks, name: 'QuestionLinks'},
     ])
     .then((response) => {
         const md = genMd.generateMarkdown(firstResponse);
         const md2 = genMd.generateUsageFiles(secondResponse);
-        const md3 = genMd.generateCrednLic(response);
-        writeToFile('README.md', `${md}${md2}${md3}`);
+        const md3 = genMd.generateFeatures(thirdResponse);
+        const md4 = genMd.generateCrednLic(response);
+        writeToFile('README.md', `${md}${md2}${md3}${md4}`);
     })
 }
 // Function call to initialize app
