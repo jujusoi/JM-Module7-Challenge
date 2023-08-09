@@ -420,6 +420,8 @@ ${data.QuestionTests.replace(/\|/g,"\n\n")}
 
 ## Questions
 
+${data.QuestionQuestions.replace(/\|/g,"\n\n")}
+
 GitHub user:
 - ${data.QuestionGithub}, https://www.github.com/${data.QuestionGithub}/
 

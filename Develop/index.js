@@ -5,8 +5,8 @@ const genMd = require('./utils/generateMarkdown');
 const { error } = require('console');
 let usageArray = [];
 // TODO: Create an array of questions for user input
-const questions = ["Enter your project title", "Provide a description of your project", "Enter installation instructions", "Provide instructions and examples for use", "Any screenshots/videos to accompany use instructions?", "Alt description for file:", "Provide a path to your file", "Any additional files?", "Any Contribution guidelines for other developers?", "Input license type:", "What are some of your Project's features?", "External links:", "Any tests for your application? Provide examples on how to run them:", "Enter your github username (no link):", "Enter your email address:"];
-const [qTitle, qDesc, qInstall, qUsage, qUsageCon, qUsagePathName, qUsagePath, qUsagePathCon, qCredits, qLicense, qFeatures, qLinks, qTests, qGithub, qEmail] = questions;
+const questions = ["Enter your project title", "Provide a description of your project", "Enter installation instructions", "Provide instructions and examples for use", "Any screenshots/videos to accompany use instructions?", "Alt description for file:", "Provide a path to your file", "Any additional files?", "Any Contribution guidelines for other developers?", "Input license type:", "What are some of your Project's features?", "External links:", "Any tests for your application? Provide examples on how to run them:", "Enter your github username (no link):", "Enter your email address:", "List answers to some common questions that may be asked regarding your project:"];
+const [qTitle, qDesc, qInstall, qUsage, qUsageCon, qUsagePathName, qUsagePath, qUsagePathCon, qCredits, qLicense, qFeatures, qLinks, qTests, qGithub, qEmail, qQuestions] = questions;
 const choices = [
     'Apache License 2.0',
     'GNU General Public License v3.0',
@@ -41,7 +41,7 @@ function init() {
         if (response.QuestionUsageCon === true) {
             initUsageStuff(response);
         } else {
-
+            initCredLicense(response);
         }
     }
     )}
@@ -68,6 +68,7 @@ function initCredLicense(firstResponse, secondResponse) {
         {type: 'input', message: qFeatures, name: 'QuestionFeatures'},
         {type: 'input', message: qCredits, name: 'QuestionCredits'},
         {type: 'input', message: qTests, name: 'QuestionTests'},
+        {type: 'input', message: qQuestions, name: 'QuestionQuestions'},
         {type: 'input', message: qGithub, name: 'QuestionGithub'},
         {type: 'input', message: qEmail, name: 'QuestionEmail'},
         {type: 'list', message: qLicense, name: 'QuestionLicense', choices: choices},
@@ -75,9 +76,13 @@ function initCredLicense(firstResponse, secondResponse) {
     .then((response) => {
         firstResponse.QuestionLicense = response.QuestionLicense;
         const md = genMd.generateMarkdown(firstResponse);
-        const md2 = genMd.generateUsageFiles(secondResponse);
         const md3 = genMd.generateCrednLic(response);
-        writeToFile('README.md', `${md}${md2}${md3}`);
+        if (secondResponse) {
+            const md2 = genMd.generateUsageFiles(secondResponse);
+            writeToFile('README.md', `${md}${md2}${md3}`);
+        } else {
+            writeToFile('README.md', `${md}${md3}`);
+        }
     })
 }
 // Function call to initialize app
