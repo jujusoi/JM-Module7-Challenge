@@ -18,7 +18,7 @@ const choices = [
 const [apache, GNU3, MIT, BSD2C, BSD3C, boost, CCC1, eclipse, GNUP3, GNU2, GNU21, mozilla, unlicense] = choices;
 
 function renderLicenseLink(license) {
-  
+
 }
 
 // TODO: Create a function that returns the license link
@@ -370,6 +370,19 @@ ${renderLicenseBadge(data.QuestionLicense)}
 ## Description
 
 ${data.QuestionDescription.replace(/\|/g,"\n\n")}
+
+## Table of Contents
+
+- [Project Title](#${data.QuestionTitle.replace(/\ /g, '-').toLowerCase()})
+- [License Badge](#license-badge)
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Contribution](#contributing)
+- [Tests](#tests)
+- [Links](#links)
+- [License](#license)
 
 ## Installation
 
