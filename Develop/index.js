@@ -4,10 +4,24 @@ const inquirer = require('inquirer');
 const genMd = require('./utils/generateMarkdown');
 const { error } = require('console');
 let usageArray = [];
-let featureArray = [];
 // TODO: Create an array of questions for user input
-const questions = ["Enter your project title", "Provide a description of your project", "Enter installation instructions", "Provide instructions and examples for use", "Any screenshots/videos to accompany use instructions?", "Alt description for file:", "Provide a path to your file", "Any additional files?", "Input Credits: i.e. contributors, third-party-assets, tutorials", "Input license type:", "What are some of your Project's features?", "External links:", "Input another line?"];
-const [qTitle, qDesc, qInstall, qUsage, qUsageCon, qUsagePathName, qUsagePath, qUsagePathCon, qCredits, qLicense, qFeatures, qLinks, qFeaturesCon] = questions;
+const questions = ["Enter your project title", "Provide a description of your project", "Enter installation instructions", "Provide instructions and examples for use", "Any screenshots/videos to accompany use instructions?", "Alt description for file:", "Provide a path to your file", "Any additional files?", "Any Contribution guidlines for other developers?", "Input license type:", "What are some of your Project's features?", "External links:", "Any tests for your application? Provide examples on how to run them:"];
+const [qTitle, qDesc, qInstall, qUsage, qUsageCon, qUsagePathName, qUsagePath, qUsagePathCon, qCredits, qLicense, qFeatures, qLinks, qTests] = questions;
+const choices = [
+    'Apache License 2.0',
+    'GNU General Public License v3.0',
+    'MIT License',
+    'BSD 2-Clause "Simplified" License',
+    'BSD 3-Clause "New" or "Revised" License',
+    'Boost Software License 1.0',
+    'Creative Commons Zero v1.0 Universal',
+    'Eclipse Public License 2.0',
+    'GNU Affero General Public License v3.0',
+    'GNU General Public License v2.0',
+    'GNU Lesser General Public License v2.1',
+    'Mozilla Public License 2.0',
+    'The Unlicense'
+]
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => err ? console.error(err) : console.log("README written!"))
@@ -51,13 +65,13 @@ function initUsageStuff(firstResponse) {
     })
 }
 
-
 function initCredLicense(firstResponse, secondResponse) {
     inquirer.prompt([
         {type: 'input', message: qFeatures, name: 'QuestionFeatures'},
         {type: 'input', message: qCredits, name: 'QuestionCredits'},
-        {type: 'input', message: qLicense, name: 'QuestionLicense'},
+        {type: 'input', message: qTests, name: 'QuestionTests'},
         {type: 'input', message: qLinks, name: 'QuestionLinks'},
+        {type: 'list', message: qLicense, name: 'QuestionLicense', choices: choices},
     ])
     .then((response) => {
         const md = genMd.generateMarkdown(firstResponse);
