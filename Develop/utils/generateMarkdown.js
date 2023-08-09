@@ -373,7 +373,7 @@ ${data.QuestionDescription.replace(/\|/g,"\n\n")}
 
 ## Table of Contents
 
-- [Project Title](#${data.QuestionTitle.replace(/\ /g, '-').toLowerCase()})
+- [Title](#${data.QuestionTitle.replace(/\ /g, '-').toLowerCase()})
 - [License Badge](#license-badge)
 - [Description](#description)
 - [Installation](#installation)
@@ -381,7 +381,7 @@ ${data.QuestionDescription.replace(/\|/g,"\n\n")}
 - [Features](#features)
 - [Contribution](#contributing)
 - [Tests](#tests)
-- [Links](#links)
+- [Questions](#questions)
 - [License](#license)
 
 ## Installation
@@ -418,9 +418,13 @@ ${data.QuestionCredits.replace(/\|/g,"\n\n")}
 
 ${data.QuestionTests.replace(/\|/g,"\n\n")}
 
-## Links
+## Questions
 
-${data.QuestionLinks.replace(/\|/g,"\n\n")}
+GitHub user:
+- ${data.QuestionGithub}, https://www.github.com/${data.QuestionGithub}/
+
+If further inquiry is necessary, reach out to me through my email address: 
+- ${data.QuestionEmail}
 
 ## License
 

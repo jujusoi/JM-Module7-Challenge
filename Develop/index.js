@@ -5,8 +5,8 @@ const genMd = require('./utils/generateMarkdown');
 const { error } = require('console');
 let usageArray = [];
 // TODO: Create an array of questions for user input
-const questions = ["Enter your project title", "Provide a description of your project", "Enter installation instructions", "Provide instructions and examples for use", "Any screenshots/videos to accompany use instructions?", "Alt description for file:", "Provide a path to your file", "Any additional files?", "Any Contribution guidlines for other developers?", "Input license type:", "What are some of your Project's features?", "External links:", "Any tests for your application? Provide examples on how to run them:"];
-const [qTitle, qDesc, qInstall, qUsage, qUsageCon, qUsagePathName, qUsagePath, qUsagePathCon, qCredits, qLicense, qFeatures, qLinks, qTests] = questions;
+const questions = ["Enter your project title", "Provide a description of your project", "Enter installation instructions", "Provide instructions and examples for use", "Any screenshots/videos to accompany use instructions?", "Alt description for file:", "Provide a path to your file", "Any additional files?", "Any Contribution guidelines for other developers?", "Input license type:", "What are some of your Project's features?", "External links:", "Any tests for your application? Provide examples on how to run them:", "Enter your github username (no link):", "Enter your email address:"];
+const [qTitle, qDesc, qInstall, qUsage, qUsageCon, qUsagePathName, qUsagePath, qUsagePathCon, qCredits, qLicense, qFeatures, qLinks, qTests, qGithub, qEmail] = questions;
 const choices = [
     'Apache License 2.0',
     'GNU General Public License v3.0',
@@ -68,7 +68,8 @@ function initCredLicense(firstResponse, secondResponse) {
         {type: 'input', message: qFeatures, name: 'QuestionFeatures'},
         {type: 'input', message: qCredits, name: 'QuestionCredits'},
         {type: 'input', message: qTests, name: 'QuestionTests'},
-        {type: 'input', message: qLinks, name: 'QuestionLinks'},
+        {type: 'input', message: qGithub, name: 'QuestionGithub'},
+        {type: 'input', message: qEmail, name: 'QuestionEmail'},
         {type: 'list', message: qLicense, name: 'QuestionLicense', choices: choices},
     ])
     .then((response) => {
