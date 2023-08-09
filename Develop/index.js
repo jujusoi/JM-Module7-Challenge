@@ -58,8 +58,6 @@ function initUsageStuff(firstResponse) {
             initUsageStuff(firstResponse);
         } else {
             usageArray = usageArray.concat(response);
-            console.log(usageArray);
-            console.log(firstResponse);
             initCredLicense(firstResponse, usageArray);
         }
     })
@@ -74,6 +72,7 @@ function initCredLicense(firstResponse, secondResponse) {
         {type: 'list', message: qLicense, name: 'QuestionLicense', choices: choices},
     ])
     .then((response) => {
+        firstResponse.QuestionLicense = response.QuestionLicense;
         const md = genMd.generateMarkdown(firstResponse);
         const md2 = genMd.generateUsageFiles(secondResponse);
         const md3 = genMd.generateCrednLic(response);
