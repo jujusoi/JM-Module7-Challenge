@@ -16,17 +16,18 @@ function generateMarkdown(data) {
 
 ## Description
 
-${data.QuestionDescription}
+${data.QuestionDescription.replace(/\|/g,"\n\n")}
 
 ## Installation
 
-${data.QuestionInstall}
+${data.QuestionInstall.replace(/\|/g,"\n\n")}
 
 ## Usage
 
-${data.QuestionUsage}
+${data.QuestionUsage.replace(/\|/g,"\n\n")}
 `;
 }
+
 function generateUsageFiles(data) {
   let result = '';
   for (let obj of data) {
@@ -37,31 +38,23 @@ function generateUsageFiles(data) {
   return result;
 }
 
-function generateFeatures(data) {
-  let result = '';
-  for (let obj of data) {
-    result += `
-  ${obj.QuestionFeatures}
-    `
-  }
-  return `
-## Features
-${result}`;
-}
-
 function generateCrednLic(data) {
   return `
+## Features
+
+${data.QuestionFeatures.replace(/\|/g,"\n\n")}
+
 ## Credits
 
-${data.QuestionCredits}
+${data.QuestionCredits.replace(/\|/g,"\n\n")}
 
 ## License
 
-${data.QuestionLicense}
+${data.QuestionLicense.replace(/\|/g,"\n\n")}
 
 ## Links
 
-${data.QuestionLinks}
+${data.QuestionLinks.replace(/\|/g,"\n\n")}
   `
 }
 
@@ -69,5 +62,4 @@ module.exports = {
   generateMarkdown,
   generateUsageFiles,
   generateCrednLic,
-  generateFeatures,
 };

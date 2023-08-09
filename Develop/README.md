@@ -1,39 +1,42 @@
-# Nope
+# Among Us
 
 ## Description
 
-make me
+Among Us is a multiplayer game where 10 players get dropped into an alien spaceship, sky headquarters or planet base, where each player is designated with a private role of either a “crewmate” and an “impostor.”
+
+This is an online multiplayer social deduction game, and a player can either be a crewmate or an imposter.
 
 ## Installation
 
-n/A
+Download and install BlueStacks on your PC.
 
 ## Usage
 
-install, download. done.
+1. Kill sussies 
 
-  ![amongu s](./readmefiles/jumsoi.gif/)
+2. Do your mom
+
+![Among us](./readmefiles/amongus.txt/)
     
 ## Features
 
+Accessible 
 
-  amazing
-    
-  does htings well
-    
-  responsive
-    
-  functional
-    
-  ## Credits
+Responsive 
 
-  me
+Functional
 
-  ## License
+## Credits
 
-  M.I.T
+jumsoi, 
 
-  ## Links
+https://www.github.com/jujusoi/
 
-  https://www.yourmother.com
+## License
+
+M.I.T
+
+## Links
+
+https://www.google.com/
   

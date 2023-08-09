@@ -46,29 +46,15 @@ function initUsageStuff(firstResponse) {
             usageArray = usageArray.concat(response);
             console.log(usageArray);
             console.log(firstResponse);
-            initFeatureStuff(firstResponse, usageArray);
+            initCredLicense(firstResponse, usageArray);
         }
     })
 }
 
-function initFeatureStuff(first, second) {
+
+function initCredLicense(firstResponse, secondResponse) {
     inquirer.prompt([
         {type: 'input', message: qFeatures, name: 'QuestionFeatures'},
-        {type: 'confirm', message: qFeaturesCon, name: 'QuestionFeaturesCon'},
-    ])
-    .then((response) => {
-        if (response.QuestionFeaturesCon === true) {
-            featureArray = featureArray.concat(response);
-            initFeatureStuff(first, second);
-        } else {
-            featureArray = featureArray.concat(response);
-            initCredLicense(first, second, featureArray);
-        }
-    })
-}
-
-function initCredLicense(firstResponse, secondResponse, thirdResponse) {
-    inquirer.prompt([
         {type: 'input', message: qCredits, name: 'QuestionCredits'},
         {type: 'input', message: qLicense, name: 'QuestionLicense'},
         {type: 'input', message: qLinks, name: 'QuestionLinks'},
@@ -76,10 +62,14 @@ function initCredLicense(firstResponse, secondResponse, thirdResponse) {
     .then((response) => {
         const md = genMd.generateMarkdown(firstResponse);
         const md2 = genMd.generateUsageFiles(secondResponse);
-        const md3 = genMd.generateFeatures(thirdResponse);
-        const md4 = genMd.generateCrednLic(response);
-        writeToFile('README.md', `${md}${md2}${md3}${md4}`);
+        const md3 = genMd.generateCrednLic(response);
+        writeToFile('README.md', `${md}${md2}${md3}`);
     })
 }
 // Function call to initialize app
+console.log(`For multi line input, use | before the text you want to appear on the next line. For example:
+This project is |amazing!
+Output: 
+This project is
+amazing! `);
 init();
