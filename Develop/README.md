@@ -1,15 +1,15 @@
 
-# Recipe Radar
+# README Test
 ### License Badge
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-Recipe Radar is a web application that helps users find recipes based on the ingredients they have. It also provides nutritional information and allows users to save their favorite recipes for easy access in the future.
+Testing the README
 
 ## Table of Contents
 
-- [Title](#recipe-radar)
+- [Title](#readme-test)
 - [License Badge](#license-badge)
 - [Description](#description)
 - [Installation](#installation)
@@ -22,41 +22,39 @@ Recipe Radar is a web application that helps users find recipes based on the ing
 
 ## Installation
 
-1. Clone the repository to your local machine using git@github.com/jujusoi/Project-1.git 
+Either: 
 
-2. Navigate to your project directory in your terminal 
+Clone the repo and open in VS Studio 
 
-3. Open the index.html file in your browser 
-
-4. Live site: www.example.com
+Watch the video tutorial
 
 ## Usage
 
-1. Enter the ingredients you have in the search bar 
+Generate README
 
-2. Click the 'Search' button 
-
-3. The application will display a list of recipes and those ingredients 
-
-4. Click on a recipe to view more details, including nutrient info 
-
-5. Click the save button to view recipes in the main page
-
+![jumsoi](./readmefiles/jumsoi.gif/)
+    
 ## Features
 
-Ingredient-based Recipe Search: Enter the ingredients you have on hand, and Recipe Radar will provide a list of recipes that use those ingredients. This feature helps you make the most of what you have in your pantry.
+Generate README 
+
+Functional 
+
+Simple to use 
+
+Detailed prompts
 
 ## Contributing
 
-No contribution guidelines
+N/A
 
 ## Tests
 
-No tests
+N/A
 
 ## Questions
 
-No questions
+Q: How awesome are you? A: Very.
 
 GitHub user:
 - jujusoi, https://www.github.com/jujusoi/
