@@ -1,15 +1,15 @@
 
-# README Test
+# Example README
 ### License Badge
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-Testing the README
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## Table of Contents
 
-- [Title](#readme-test)
+- [Title](#example-readme)
 - [License Badge](#license-badge)
 - [Description](#description)
 - [Installation](#installation)
@@ -22,27 +22,25 @@ Testing the README
 
 ## Installation
 
-Either: 
-
-Clone the repo and open in VS Studio 
-
-Watch the video tutorial
+N/A
 
 ## Usage
 
-Generate README
+N/A
 
-![jumsoi](./readmefiles/jumsoi.gif/)
+![example](./readmefiles/example.png/)
+    
+![example](./readmefiles/example.png/)
     
 ## Features
 
-Generate README 
+1. Functional 
 
-Functional 
+2. Amazing 
 
-Simple to use 
+3. Does stuff 
 
-Detailed prompts
+4. Generates README
 
 ## Contributing
 
@@ -54,7 +52,7 @@ N/A
 
 ## Questions
 
-Q: How awesome are you? A: Very.
+Q: How cool are you? A: Very.
 
 GitHub user:
 - jujusoi, https://www.github.com/jujusoi/

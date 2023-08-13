@@ -1,5 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+
 const choices = [
   'Apache License 2.0',
   'GNU General Public License v3.0',
@@ -17,12 +16,6 @@ const choices = [
 ]
 const [apache, GNU3, MIT, BSD2C, BSD3C, boost, CCC1, eclipse, GNUP3, GNU2, GNU21, mozilla, unlicense] = choices;
 
-function renderLicenseLink(license) {
-
-}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
 function renderLicenseBadge(license) {
   let badge;
   if (license === apache) {
@@ -57,8 +50,6 @@ function renderLicenseBadge(license) {
   return badge;
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
 function renderLicenseSection(license) {
   let licSection;
   if (license === MIT) {
@@ -358,8 +349,6 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
   }
   return licSection;
 }
-
-// TODO: Create a function to generate markdown for README
 
 function generateMarkdown(data) {
   return `

@@ -1,10 +1,9 @@
-// TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
 const genMd = require('./utils/generateMarkdown');
 const { error } = require('console');
 let usageArray = [];
-// TODO: Create an array of questions for user input
+
 const questions = ["Enter your project title", "Provide a description of your project", "Enter installation instructions", "Provide instructions and examples for use", "Any screenshots/videos to accompany use instructions?", "Alt description for file:", "Provide a path to your file", "Any additional files?", "Any Contribution guidelines for other developers?", "Input license type:", "What are some of your Project's features?", "External links:", "Any tests for your application? Provide examples on how to run them:", "Enter your github username (no link):", "Enter your email address:", "List answers to some common questions that may be asked regarding your project:"];
 const [qTitle, qDesc, qInstall, qUsage, qUsageCon, qUsagePathName, qUsagePath, qUsagePathCon, qCredits, qLicense, qFeatures, qLinks, qTests, qGithub, qEmail, qQuestions] = questions;
 const choices = [
@@ -22,12 +21,10 @@ const choices = [
     'Mozilla Public License 2.0',
     'The Unlicense'
 ]
-// TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => err ? console.error(err) : console.log("README written!"))
 }
 
-// TODO: Create a function to initialize app
 function init() {
     inquirer.prompt([
     { type: 'input', message: qTitle, name: 'QuestionTitle' },
@@ -85,7 +82,7 @@ function initCredLicense(firstResponse, secondResponse) {
         }
     })
 }
-// Function call to initialize app
+
 console.log(`For multi line input, use | before the text you want to appear on the next line. For example:
 This project is |amazing!
 Output: 

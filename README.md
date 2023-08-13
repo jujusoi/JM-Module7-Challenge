@@ -42,7 +42,7 @@ When the user completes the entry of supporting files and inputs 'no' on the con
 
 Upon reaching the license query after questions, users are presented with a selection of GitHub licenses. They can navigate through the options using the up and down arrow keys and select their choice by pressing the enter key. Following the selection, the README file generates, and incorporates the prompt values in their corresponding sections. Furthermore, the README includes a license badge at the top of the document and places the terms of the selected license agreement at the bottom.
 
-![Functionality](./readmefiles/example.png/)
+![Functionality](https://watch.screencastify.com/v/cbg4Rm523nHoGHqvTFiY)
 
 ## Features
 
